@@ -1,3 +1,6 @@
+# 단원 2, 1-3절
+rm(list=ls())
+
 max(4, 6, 2)
 factorial(5)
 a <- 125
@@ -81,19 +84,49 @@ rep(1:4, c(2,2,2,2))     # same as second.
 rep(1:4, c(2,1,2,1))
 rep(1:4, each = 2, length.out = 4)    # first 4 only.
 
-a <- 1:10
-a
-a[1]
-a[10]
-a[c(1, 3)]
 
-d <- c(1,2,3,4,5,6,7,8,9,10)
-sum(d)
-sum(2*d)
-length(d)
-mean(d[1:5])
-max(d)
-min(d)
-sort(d)
-sort(d, decreasing = FALSE)
-sort(d, decreasing = TRUE)
+
+score <- c(90, 85, 70)
+score
+names(score)
+names(score) <- c("John", "Tom", "Jane")
+names(score)
+score
+
+score[1]
+score[2]
+score[3]
+score["John"]
+score["Tom"]
+score["Jane"]
+
+d <- c(1, 4, 3, 7, 8)
+d[1]
+d[2]
+d[3]
+d[4]
+d[5]
+d[6]
+
+d <- c(1, 4, 3, 7, 8)
+d[c(1, 3, 5)]
+d[1:3]
+d[seq(1, 5, 2)]
+d[-2]
+d[-c(3:5)]
+
+GNP <- c(2090, 2450, 960)
+GNP
+names(GNP) <- c("Korea", "Japan", "Nepal")
+GNP
+GNP[1]
+GNP["Korea"]
+GNP[c("Korea", "Nepal")]
+GNP[c("Nepal", "Korea", "Nepal")]
+
+v1 <- c(1, 5, 7, 8, 9)
+v1
+v1[2] <- 3
+v1
+v1[c(1, 5)] <- c(10, 20)
+v1
