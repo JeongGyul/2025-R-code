@@ -147,6 +147,32 @@ boxplot(Petal.Length~Species, data=iris, main="품종별 꽃잎의 길이")
 
 
 
+mtcars
+head(mtcars)
+str(mtcars)
+summary(mtcars)
+
+dev.off()
+par(mfrow=c(1,3))    # 1x3 가상화면 분할
+barplot(table(mtcars$carb),
+        main="Barplot of Carburetors",
+        xlab="#of carburetors",
+        ylab="frequency",
+        col="blue")
+barplot(table(mtcars$cyl),
+        main="Barplot of Cylender",
+        xlab="#of cylender",
+        ylab="frequency",
+        col="red")
+barplot(table(mtcars$gear),
+        main="Barplot of Grar",
+        xlab="#of gears",
+        ylab="frequency",
+        col="green")
+par(mfrow=c(1,1)) #  해제
+
+
+
 
 
 
