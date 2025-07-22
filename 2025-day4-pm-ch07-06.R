@@ -219,6 +219,7 @@ plot(airmiles)
 # ch08-sect3.R
 rm(list=ls())
 
+# 8-14.R
 # 필요한 패키지 설치
 if (!require("Rtsne")) {
   install.packages("Rtsne")
@@ -263,18 +264,30 @@ ggplot(df.tsne, aes(x=X1, y=X2, color=ds.y)) +
   geom_point(size=2)
 
 
+# 8-15.R
+install.packages(c("rgl", "car"))
+library("car")
+library("rgl")
+library("mgcv")
+library(Rtsne)
 
+tsne <- Rtsne(ds, dims=3, perplexity=10)
+df.tsne <- data.frame(tsne$Y)
+head(df.tsne)
 
+# 회귀면이 포함된 3차원 산점도
+scatter3d(x=df.tsne$X1, y=df.tsne$X2, z=df.tsne$X3)
 
+# 회귀면이 없는 3차원 산점도
+points <- as.integer(ds.y)
+points
+color <- c('red', 'green', 'blue')
+scatter3d(x=df.tsne$X1, y=df.tsne$X2, z=df.tsne$X3,
+          point.col = color[points],
+          surface=FALSE)
 
-
-
-
-
-
-
-
-
-
+scatter3d(x=df.tsne$X1, y=df.tsne$X2, z=df.tsne$X3,
+          point.col = color[points],
+          surface=T)
 
 
